@@ -39,6 +39,8 @@ Whether you are searching for:
 
 this project provides a lightweight, SEO-optimized, mobile-friendly solution built using modern web technologies.
 
+Use This Tool Here https://himangshuin.github.io/Naamor-Rahi-Jura-Milan/
+
 ---
 
 # 🔮 What is Rashi Milan?
