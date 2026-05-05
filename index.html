@@ -417,18 +417,22 @@ var DATA = {
 
 var KEYS = Object.keys(DATA);
 
-// Pre-build reverse lookup for female:
-// femREV[femaleRashi] = { raj:[maleRashis], uttam:[maleRashis], mad:[maleRashis] }
-var femREV = {};
-KEYS.forEach(function(femKey) {
-  femREV[femKey] = { raj:[], uttam:[], mad:[] };
-});
-KEYS.forEach(function(maleKey) {
-  var d = DATA[maleKey];
-  d.raj.forEach(function(f) { if(femREV[f]) femREV[f].raj.push(maleKey); });
-  d.uttam.forEach(function(f) { if(femREV[f]) femREV[f].uttam.push(maleKey); });
-  d.mad.forEach(function(f) { if(femREV[f]) femREV[f].mad.push(maleKey); });
-});
+// Female Rashi -> Male Rashi compatibility (from the official Female table in image)
+// This is a SEPARATE table, NOT a simple reverse of the male table
+var FEMALE_DATA = {
+  "মেষ":     { raj:["মেষ","মিথুন","কৰ্কট","মকৰ","কুম্ভ"],                       uttam:["সিংহ"],      mad:["বৃষ","বৃশ্চিক"] },
+  "বৃষ":     { raj:["বৃষ","কৰ্কট","সিংহ","বৃশ্চিক","কুম্ভ","মীন"],             uttam:["কন্যা"],     mad:["মেষ","তুলা"] },
+  "মিথুন":  { raj:["মেষ","মিথুন","সিংহ","কৰ্কট","মীন"],                        uttam:["তুলা"],      mad:["বৃষ","মকৰ"] },
+  "কৰ্কট":  { raj:["মেষ","বৃষ","কৰ্কট","কন্যা","তুলা","মকৰ","ধনু","মীন"],     uttam:["বৃশ্চিক"],  mad:["মিথুন","ধনু","সিংহ"] },
+  "সিংহ":   { raj:["বৃষ","সিংহ","তুলা","মিথুন","বৃশ্চিক"],                     uttam:["ধনু"],       mad:["কৰ্কট","মীন","কন্যা"] },
+  "কন্যা":  { raj:["কন্যা","বৃশ্চিক","ধনু","মীন","মিথুন","কৰ্কট"],            uttam:["মকৰ"],      mad:["সিংহ","কুম্ভ","তুলা"] },
+  "তুলা":   { raj:["কৰ্কট","সিংহ","তুলা","ধনু","মকৰ"],                          uttam:["কুম্ভ"],     mad:["বৃষ","কন্যা","মেষ"] },
+  "বৃশ্চিক":{ raj:["বৃষ","সিংহ","কন্যা","বৃশ্চিক","কুম্ভ"],                    uttam:["মীন"],       mad:["মেষ"] },
+  "ধনু":    { raj:["কন্যা","ধনু","কুম্ভ","মীন","কৰ্কট","তুলা"],               uttam:["সিংহ"],      mad:["বৃষ","কৰ্কট","মিথুন"] },
+  "মকৰ":   { raj:["মেষ","বৃষ","কৰ্কট","তুলা","মকৰ","মীন"],                    uttam:["বৃষ"],       mad:["ধনু","মিথুন","কন্যা"] },
+  "কুম্ভ":  { raj:["মেষ","বৃষ","বৃশ্চিক","ধনু","কুম্ভ"],                        uttam:["মিথুন"],    mad:["মকৰ","কন্যা","সিংহ"] },
+  "মীন":    { raj:["বৃষ","মিথুন","কন্যা","ধনু","মকৰ","মীন"],                  uttam:["কৰ্কট"],    mad:["কুম্ভ","সিংহ","তুলা"] }
+};
 
 var myGender = null;
 var myRashi  = null;
@@ -584,9 +588,10 @@ function renderResult(key){
     uttamList = d.uttam;
     madList   = d.mad;
   } else {
-    rajList   = femREV[key].raj;
-    uttamList = femREV[key].uttam;
-    madList   = femREV[key].mad;
+    var fd    = FEMALE_DATA[key];
+    rajList   = fd.raj;
+    uttamList = fd.uttam;
+    madList   = fd.mad;
   }
 
   var sc = isMale ? "m" : "f";
