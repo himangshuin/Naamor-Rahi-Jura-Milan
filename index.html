@@ -26,6 +26,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Serif Bengali',serif;background:var(--cream);color:var(--text);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,149,42,.07) 0%,transparent 70%),radial-gradient(circle at 15% 80%,rgba(61,38,96,.06) 0%,transparent 50%);pointer-events:none;z-index:0}
+
 header{background:linear-gradient(160deg,var(--deep) 0%,var(--deep2) 60%,var(--deep3) 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 header::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(201,149,42,.12) 0%,transparent 40%),radial-gradient(circle at 80% 30%,rgba(201,149,42,.08) 0%,transparent 35%);pointer-events:none}
 header::after{content:'✦ ✦ ✦';position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);color:rgba(201,149,42,.4);font-size:10px;letter-spacing:8px}
@@ -34,7 +35,10 @@ header::after{content:'✦ ✦ ✦';position:absolute;bottom:1rem;left:50%;trans
 .hdr-title span{color:var(--gold-light)}
 .hdr-sub{font-size:clamp(12px,3vw,15px);color:rgba(255,255,255,.6)}
 .hdr-div{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:1.2rem auto 1rem}
-main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-index:1}
+
+main{max-width:860px;margin:0 auto;padding:2rem 1rem 6rem;position:relative;z-index:1}
+
+/* Progress Steps */
 .progress-steps{display:flex;align-items:center;justify-content:center;margin-bottom:2rem}
 .step-item{display:flex;flex-direction:column;align-items:center;gap:6px}
 .step-circle{width:36px;height:36px;border-radius:50%;border:2px solid var(--border2);background:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--text3);font-weight:600;transition:all .3s ease;z-index:1}
@@ -46,13 +50,19 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .step-conn{width:60px;height:2px;background:var(--border);margin-bottom:18px;flex-shrink:0;transition:background .4s ease}
 .step-conn.done{background:linear-gradient(90deg,var(--gold),var(--gold-light))}
 @media(max-width:480px){.step-conn{width:30px}}
+
+/* Legend */
 .legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.8rem;justify-content:center}
 .legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text2);background:#fff;border:.5px solid var(--border);border-radius:99px;padding:5px 14px;box-shadow:0 1px 4px rgba(26,15,46,.06)}
 .ldot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* Card */
 .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.8rem 1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);position:relative;overflow:hidden}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .card-label{font-size:15px;font-weight:600;color:var(--text);margin-bottom:1.2rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .card-icon{width:28px;height:28px;background:linear-gradient(135deg,var(--deep),var(--deep3));border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+
+/* Gender Buttons */
 .gender-row{display:flex;gap:12px}
 .gbtn{flex:1;padding:14px 12px;border-radius:14px;border:2px solid var(--border);background:var(--cream);cursor:pointer;text-align:center;transition:all .25s cubic-bezier(.34,1.3,.64,1);font-family:'Noto Serif Bengali',serif}
 .gbtn:hover{transform:translateY(-2px)}
@@ -64,6 +74,8 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .gbtn.male-on .gl{color:var(--male)}
 .gbtn.fem-on{background:var(--female-pale);border-color:var(--female);box-shadow:0 4px 20px rgba(181,55,107,.2)}
 .gbtn.fem-on .gl{color:var(--female)}
+
+/* Name Input */
 .name-wrap{position:relative;margin-bottom:14px}
 .name-inp{width:100%;padding:14px 18px;font-size:16px;border:1.5px solid var(--border2);border-radius:var(--radius);background:var(--cream);color:var(--text);font-family:'Noto Serif Bengali',serif;outline:none;transition:all .2s ease}
 .name-inp:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(201,149,42,.12)}
@@ -71,11 +83,13 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .name-hint{margin-top:10px;padding:10px 14px;background:var(--gold-pale);border:1px solid var(--border);border-radius:var(--radius);font-size:13px;color:var(--text2);display:none;line-height:1.6}
 .name-hint.show{display:block}
 .name-hint strong{color:var(--gold)}
+
+/* Rashi Grid */
 .rg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media(max-width:480px){.rg{grid-template-columns:repeat(3,1fr)}}
 .rbtn{background:var(--cream);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 6px 10px;cursor:pointer;text-align:center;transition:all .2s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;font-family:inherit}
 .rbtn:hover{background:var(--gold-pale);border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-gold)}
-.rbtn.suggested{border-color:var(--gold);background:var(--gold-pale)}
+.rbtn.suggested{border-color:var(--gold);background:var(--gold-pale);box-shadow:0 0 0 2px rgba(201,149,42,.3)}
 .rbtn.suggested::before{content:'✦';position:absolute;top:4px;right:5px;font-size:8px;color:var(--gold)}
 .rbtn.sel-m{background:linear-gradient(145deg,var(--male),var(--male-light));border-color:var(--male-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,91,174,.35)}
 .rbtn.sel-f{background:linear-gradient(145deg,var(--female),var(--female-light));border-color:var(--female-light);transform:translateY(-2px);box-shadow:0 6px 20px rgba(181,55,107,.35)}
@@ -85,6 +99,8 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .rbtn.sel-m .rnam,.rbtn.sel-f .rnam{color:#fff}
 .rlet{font-size:9px;display:block;color:var(--text3);font-family:monospace;letter-spacing:.3px;transition:color .2s}
 .rbtn.sel-m .rlet,.rbtn.sel-f .rlet{color:rgba(255,255,255,.55)}
+
+/* Selected Bar */
 .sel-bar{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--deep),var(--deep2));border-radius:var(--radius);padding:12px 16px;margin-top:14px}
 .sel-bar-icon{font-size:24px}
 .sel-bar-info{flex:1}
@@ -92,10 +108,14 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .sel-bar-sub{font-size:11px;color:rgba(255,255,255,.5)}
 .sel-bar-chg{font-size:11px;color:var(--gold-light);padding:4px 10px;border:1px solid rgba(201,149,42,.4);border-radius:99px;cursor:pointer;background:none;font-family:inherit;transition:background .2s}
 .sel-bar-chg:hover{background:rgba(201,149,42,.15)}
+
+/* Empty state */
 .empty{text-align:center;padding:3rem 1.5rem;background:#fff;border:1px dashed var(--border);border-radius:var(--radius-lg)}
 .empty-ico{font-size:48px;display:block;margin-bottom:1rem;animation:float 3s ease-in-out infinite}
 .empty-t{font-size:16px;font-weight:600;color:var(--text2);margin-bottom:6px}
 .empty-s{font-size:13px;color:var(--text3)}
+
+/* Result Card */
 .result-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
 .res-hdr{padding:1.5rem 1.8rem;display:flex;align-items:center;gap:1.2rem;position:relative;overflow:hidden}
 .res-hdr.m{background:linear-gradient(135deg,#1A2A5E,#2C3F8A)}
@@ -105,6 +125,8 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .res-lbl{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:1.5px;text-transform:uppercase;font-family:'Cormorant Garamond',serif;margin-bottom:3px}
 .res-name{font-size:26px;font-weight:700;color:#fff;margin-bottom:2px}
 .res-letters{font-size:12px;color:var(--gold-light);font-family:monospace;letter-spacing:1px}
+
+/* Match Between */
 .match-between{display:flex;align-items:center;justify-content:center;gap:16px;padding:18px 20px 0}
 .mbp{text-align:center;flex:1}
 .mbp-ico{font-size:30px;display:block;margin-bottom:4px}
@@ -113,11 +135,28 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .mbp.f .mbp-rashi{color:var(--female)}
 .mbp-lbl{font-size:10px;color:var(--text3);margin-top:2px}
 .mb-arrow{font-size:22px;color:var(--gold);flex-shrink:0}
+
+/* Compat bar */
 .compat{margin:14px 20px 0;padding:14px 16px;background:var(--cream);border-radius:var(--radius);border:1px solid var(--border)}
 .compat-lbl{font-size:11px;color:var(--text3);margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
 .compat-lbl strong{font-size:13px;color:var(--text)}
 .compat-bg{height:8px;background:rgba(201,149,42,.15);border-radius:99px;overflow:hidden}
 .compat-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold-light));width:0%;transition:width .8s cubic-bezier(.34,1.2,.64,1)}
+
+/* Name suggestion box */
+.name-suggest-box{margin:14px 20px 0;padding:16px 18px;background:linear-gradient(135deg,#F8F4FF,#F0E8FF);border:1px solid #C4A8F0;border-radius:var(--radius)}
+.nsb-title{font-size:13px;font-weight:700;color:var(--deep2);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.nsb-gender-tabs{display:flex;gap:8px;margin-bottom:10px}
+.nsb-tab{padding:5px 14px;border-radius:99px;border:1.5px solid var(--border);background:var(--cream);font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s}
+.nsb-tab.active-m{background:var(--male-pale);border-color:var(--male);color:var(--male)}
+.nsb-tab.active-f{background:var(--female-pale);border-color:var(--female);color:var(--female)}
+.nsb-letters{display:flex;flex-wrap:wrap;gap:8px}
+.nsb-letter{background:#fff;border:1.5px solid #C4A8F0;border-radius:10px;padding:8px 12px;text-align:center;min-width:52px}
+.nsb-letter .nl-char{font-size:18px;font-weight:700;color:var(--deep2);display:block}
+.nsb-letter .nl-rashi{font-size:9px;color:var(--text3);display:block;margin-top:2px}
+.nsb-note{font-size:11px;color:var(--text3);margin-top:8px;line-height:1.5}
+
+/* Tiers */
 .tier{padding:1.4rem 1.8rem;border-bottom:1px solid rgba(201,149,42,.08)}
 .tier:last-child{border-bottom:none}
 .tier-hdr{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
@@ -138,6 +177,8 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .pill-sym{font-size:15px}
 .pill-let{font-size:9px;opacity:.65;margin-left:2px;font-family:monospace}
 .tier-sub-hdr{padding:14px 20px 0;font-size:13px;font-weight:600;color:var(--text2)}
+
+/* Consult */
 .consult{margin-top:2rem;background:linear-gradient(135deg,var(--deep),var(--deep3));border-radius:var(--radius-lg);padding:1.8rem;display:flex;align-items:center;gap:1.2rem;box-shadow:0 6px 30px rgba(26,15,46,.2);position:relative;overflow:hidden}
 .consult::before{content:'';position:absolute;top:-30px;right:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(201,149,42,.2) 0%,transparent 70%);pointer-events:none}
 .ci-wrap{width:54px;height:54px;background:rgba(201,149,42,.15);border:1.5px solid rgba(201,149,42,.5);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
@@ -147,6 +188,8 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .c-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--deep);font-size:13px;font-weight:700;padding:10px 18px;border-radius:99px;text-decoration:none;transition:all .2s;white-space:nowrap;border:none;cursor:pointer;font-family:'Noto Serif Bengali',serif;box-shadow:0 3px 12px rgba(201,149,42,.4)}
 .c-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,149,42,.5)}
 @media(max-width:640px){.consult{flex-direction:column;text-align:center}.c-btn{width:100%;justify-content:center}}
+
+/* Info Grid */
 .info-grid{margin-top:2.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:540px){.info-grid{grid-template-columns:1fr}}
 .ic{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;text-align:center;box-shadow:0 2px 10px rgba(26,15,46,.05);transition:transform .2s,box-shadow .2s}
@@ -154,6 +197,8 @@ main{max-width:860px;margin:0 auto;padding:2rem 1rem 3rem;position:relative;z-in
 .ic-ico{font-size:28px;display:block;margin-bottom:8px}
 .ic-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px}
 .ic-desc{font-size:11px;color:var(--text3);line-height:1.5}
+
+/* Footer */
 footer{background:var(--deep);color:rgba(255,255,255,.5);text-align:center;padding:2rem 1rem;position:relative}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 .ft-logo{font-size:18px;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:6px}
@@ -161,12 +206,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .ft-div{width:40px;height:1px;background:rgba(201,149,42,.4);margin:1rem auto}
 .ft-credit{font-size:12px;color:rgba(255,255,255,.35)}
 .ft-credit strong{color:var(--gold-light);font-weight:600}
+
+/* WhatsApp Floating Button */
 .wa-float{position:fixed;bottom:28px;right:24px;z-index:1000;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .wa-tip{background:var(--deep);color:#fff;font-size:12px;font-weight:500;padding:7px 14px;border-radius:99px;white-space:nowrap;opacity:0;transform:translateX(10px);transition:all .25s ease;pointer-events:none;border:1px solid rgba(201,149,42,.3);font-family:'Noto Serif Bengali',serif}
 .wa-float:hover .wa-tip{opacity:1;transform:translateX(0)}
 .wa-btn{width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waPulse 2.5s ease infinite;transition:transform .2s}
 .wa-btn:hover{transform:scale(1.1);animation:none;box-shadow:0 6px 25px rgba(37,211,102,.55)}
 .wa-ico{width:32px;height:32px;fill:#fff}
+
+/* Share Modal */
 .modal-ov{position:fixed;inset:0;background:rgba(10,5,20,.7);z-index:2000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(4px)}
 .modal-ov.open{opacity:1;pointer-events:all}
 .share-modal{background:#fff;border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:1.5rem;width:100%;max-width:480px;transform:translateY(100%);transition:transform .35s cubic-bezier(.34,1.2,.64,1);max-height:90vh;overflow-y:auto}
@@ -180,11 +229,15 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .sopt-lbl{font-size:13px;font-weight:600;color:var(--text)}
 .sopt-sub{font-size:10px;color:var(--text3)}
 .sopt.wa{background:#F0FBF4;border-color:#7CC355}
+.sopt.wa:hover{border-color:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.25)}
 .sopt.wa .sopt-lbl{color:#1A6C2A}
 .modal-close{width:100%;margin-top:14px;padding:14px;border:none;background:var(--cream);border-radius:var(--radius);font-size:14px;font-weight:600;color:var(--text2);cursor:pointer;font-family:inherit;transition:background .2s}
 .modal-close:hover{background:var(--cream2)}
+
+/* Toast */
 .toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--deep);color:#fff;padding:10px 20px;border-radius:99px;font-size:13px;z-index:3000;opacity:0;transition:all .3s ease;pointer-events:none;border:1px solid rgba(201,149,42,.3)}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes waPulse{0%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.35)}70%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 4px 20px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,0)}}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--cream)}::-webkit-scrollbar-thumb{background:rgba(201,149,42,.4);border-radius:3px}
@@ -194,123 +247,135 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <header>
   <div class="hdr-orn">✦ &nbsp; Vedic Astrology &nbsp; ✦</div>
-  <h1 class="hdr-title">&#x09B0;&#x09BE;&#x09B6;&#x09BF; <span>&#x09AE;&#x09BF;&#x09B2;&#x09A8;</span> &#x0995;&#x09C7;&#x09B2;&#x0995;&#x09C1;&#x09B2;&#x09C7;&#x099F;&#x09B0;</h1>
+  <h1 class="hdr-title">ৰাশি <span>মিলন</span> কেলকুলেটৰ</h1>
   <div class="hdr-div"></div>
-  <p class="hdr-sub">&#x09A8;&#x09BE;&#x09AE;&#x09B0; &#x0986;&#x0996;&#x09F0; &#x0985;&#x09A8;&#x09C1;&#x09AF;&#x09BE;&#x09AF;&#x09BC;&#x09C0; &#x09B8;&#x09B0;&#x09CD;&#x09AC;&#x09CB;&#x09A4;&#x09CD;&#x09A4;&#x09AE; &#x09AC;&#x09C8;&#x09AC;&#x09BE;&#x09B9;&#x09BF;&#x0995; &#x09AE;&#x09BF;&#x09B2;&#x09A8; &#x09AC;&#x09BF;&#x099A;&#x09BE;&#x09F0;&#x0995;</p>
+  <p class="hdr-sub">নামৰ আখৰ অনুযায়ী সৰ্বোত্তম বৈবাহিক মিলন বিচাৰক</p>
 </header>
 
 <main>
+  <!-- Progress -->
   <div class="progress-steps">
-    <div class="step-item active" id="step1"><div class="step-circle">1</div><div class="step-label">&#x09B2;&#x09BF;&#x0982;&#x0997; &#x09AC;&#x09BE;&#x099B;&#x0995;</div></div>
+    <div class="step-item active" id="step1"><div class="step-circle">1</div><div class="step-label">লিংগ বাছক</div></div>
     <div class="step-conn" id="conn1"></div>
-    <div class="step-item" id="step2"><div class="step-circle">2</div><div class="step-label">&#x0986;&#x09AA;&#x09CB;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF;</div></div>
+    <div class="step-item" id="step2"><div class="step-circle">2</div><div class="step-label">আপোনাৰ ৰাশি</div></div>
     <div class="step-conn" id="conn2"></div>
-    <div class="step-item" id="step3"><div class="step-circle">3</div><div class="step-label">&#x09AE;&#x09BF;&#x09B2;&#x09A8; &#x09AB;&#x09B2;&#x09BE;&#x09AB;&#x09B2;</div></div>
+    <div class="step-item" id="step3"><div class="step-circle">3</div><div class="step-label">মিলন ফলাফল</div></div>
   </div>
 
+  <!-- Legend -->
   <div class="legend">
-    <div class="legend-item"><span class="ldot" style="background:#4CAF20"></span>&#x09B0;&#x09BE;&#x099C;&#x09AF;&#x09CB;&#x099F;&#x0995; &#x2014; &#x09B6;&#x09CD;&#x09B0;&#x09C7;&#x09B7;&#x09CD;&#x09A0;</div>
-    <div class="legend-item"><span class="ldot" style="background:#1DB38A"></span>&#x0989;&#x09A4;&#x09CD;&#x09A4;&#x09AE; &#x2014; &#x09AD;&#x09BE;&#x09B2;</div>
-    <div class="legend-item"><span class="ldot" style="background:#E8920A"></span>&#x09AE;&#x09A7;&#x09CD;&#x09AF;&#x09AE; &#x2014; &#x09B8;&#x09BE;&#x09A7;&#x09BE;&#x09B0;&#x09A3;</div>
+    <div class="legend-item"><span class="ldot" style="background:#4CAF20"></span>ৰাজযোটক — শ্ৰেষ্ঠ</div>
+    <div class="legend-item"><span class="ldot" style="background:#1DB38A"></span>উত্তম — ভাল</div>
+    <div class="legend-item"><span class="ldot" style="background:#E8920A"></span>মধ্যম — সাধাৰণ</div>
   </div>
 
+  <!-- Step 1: Gender -->
   <div class="card" id="genderCard">
-    <div class="card-label"><span class="card-icon">&#x1F464;</span> &#x0986;&#x09AA;&#x09C1;&#x09A8;&#x09BF; &#x0995;&#x09CB;&#x09A8;? &nbsp;&middot;&nbsp; <span style="font-size:13px;color:var(--text3);font-weight:400;">Who are you?</span></div>
+    <div class="card-label"><span class="card-icon">👤</span> আপুনি কোন? &nbsp;·&nbsp; <span style="font-size:13px;color:var(--text3);font-weight:400;">Who are you?</span></div>
     <div class="gender-row">
       <button class="gbtn" id="maleBtn">
-        <span class="gi">&#x1F468;</span>
-        <span class="gl">&#x09AA;&#x09C1;&#x09B0;&#x09C1;&#x09B7;</span>
-        <span class="gs">Male / &#x09A6;&#x09B0;&#x09BE;</span>
+        <span class="gi">👨</span>
+        <span class="gl">পুৰুষ</span>
+        <span class="gs">Male / দৰা</span>
       </button>
       <button class="gbtn" id="femaleBtn">
-        <span class="gi">&#x1F469;</span>
-        <span class="gl">&#x09AE;&#x09B9;&#x09BF;&#x09B2;&#x09BE;</span>
-        <span class="gs">Female / &#x0995;&#x0987;&#x09A8;&#x09BE;</span>
+        <span class="gi">👩</span>
+        <span class="gl">মহিলা</span>
+        <span class="gs">Female / কইনা</span>
       </button>
     </div>
   </div>
 
+  <!-- Step 2: Your Rashi -->
   <div class="card" id="rashiCard" style="display:none">
     <div class="card-label">
-      <span class="card-icon" id="rashiCardIcon">&#x2648;</span>
-      <span id="rashiCardTitle">&#x0986;&#x09AA;&#x09CB;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AC;&#x09BE;&#x099B;&#x0995;</span>
+      <span class="card-icon" id="rashiCardIcon">♈</span>
+      <span id="rashiCardTitle">আপোনাৰ ৰাশি বাছক</span>
     </div>
     <div class="name-wrap">
-      <input type="text" class="name-inp" id="nameInput" placeholder="&#x09A8;&#x09BE;&#x09AE;&#x09B0; &#x09AA;&#x09CD;&#x09B0;&#x09A5;&#x09AE; &#x0986;&#x0996;&#x09F0; &#x09B2;&#x09BF;&#x0996;&#x0995; (e.g. A, R, M, D...)" maxlength="30" autocomplete="off" />
+      <input type="text" class="name-inp" id="nameInput" placeholder="আপোনাৰ নামৰ প্ৰথম আখৰ লিখক (e.g. A, R, M, D...)" maxlength="30" autocomplete="off" />
       <div class="name-hint" id="nameHint"></div>
     </div>
-    <div style="font-size:12px;color:var(--text3);margin-bottom:10px;">&#x2193; &nbsp;&#x0985;&#x09A5;&#x09AC;&#x09BE; &#x09A4;&#x09B2;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x0997;&#x09CD;&#x09B0;&#x09BF;&#x09A1;&#x09B0; &#x09AA;&#x09B0;&#x09BE; &#x09AA;&#x09CB;&#x09A8;&#x09AA;&#x099F;&#x09BC;&#x09BE;&#x0995;&#x09C8; &#x09AC;&#x09BE;&#x099B;&#x0995;</div>
+    <div style="font-size:12px;color:var(--text3);margin-bottom:10px;">↓ &nbsp;অথবা তলৰ ৰাশি গ্ৰিডৰ পৰা পোনপটীয়াকৈ বাছক</div>
     <div class="rg" id="rashiGrid"></div>
     <div id="selectedBar"></div>
   </div>
 
+  <!-- Result -->
   <div id="resultArea">
     <div class="empty">
-      <span class="empty-ico">&#x1FA90;</span>
-      <div class="empty-t">&#x09AA;&#x09CD;&#x09B0;&#x09A5;&#x09AE;&#x09C7; &#x09B2;&#x09BF;&#x0982;&#x0997; &#x09AC;&#x09BE;&#x099B;&#x0995;</div>
-      <div class="empty-s">&#x0993;&#x09AA;&#x09F0;&#x09A4; &#x09AA;&#x09C1;&#x09B0;&#x09C1;&#x09B7; &#x09AC;&#x09BE; &#x09AE;&#x09B9;&#x09BF;&#x09B2;&#x09BE; &#x09AC;&#x09BE;&#x099B;&#x0995;<br><span style="font-size:11px;opacity:.7;">Select your gender above to get started</span></div>
+      <span class="empty-ico">🪐</span>
+      <div class="empty-t">প্ৰথমে লিংগ বাছক</div>
+      <div class="empty-s">ওপৰত পুৰুষ বা মহিলা বাছক<br><span style="font-size:11px;opacity:.7;">Select your gender above to get started</span></div>
     </div>
   </div>
 
+  <!-- Consult -->
   <div class="consult">
-    <div class="ci-wrap">&#x1F48D;</div>
+    <div class="ci-wrap">💍</div>
     <div class="ct">
-      <div class="ct-title">&#x09AC;&#x09BF;&#x09AC;&#x09BE;&#x09B9; &#x09AA;&#x09B0;&#x09BE;&#x09AE;&#x09F0;&#x09CD;&#x09B6; &#x09B2;&#x0993;&#x0995;</div>
-      <div class="ct-sub">&#x09AC;&#x09BF;&#x09B6;&#x09C7;&#x09B7;&#x099C;&#x09CD;&#x099E; &#x099C;&#x09CD;&#x09AF;&#x09CB;&#x09A4;&#x09BF;&#x09B7;&#x09C0;&#x09B0; &#x09B8;&#x09C8;&#x09A4;&#x09C7; &#x09AC;&#x09BF;&#x09B8;&#x09CD;&#x09A4;&#x09BE;&#x09F0;&#x09BF;&#x09A4; &#x0995;&#x09C1;&#x09A3;&#x09CD;&#x09A1;&#x09B2;&#x09C0; &#x09AE;&#x09BF;&#x09B2;&#x09A8; &#x0986;&#x09F0;&#x09C1; &#x09AC;&#x09BF;&#x09AC;&#x09BE;&#x09B9; &#x09AA;&#x09B0;&#x09BE;&#x09AE;&#x09F0;&#x09CD;&#x09B6;&#x09B0; &#x09AC;&#x09BE;&#x09AC;&#x09C7; &#x09AF;&#x09CB;&#x0997;&#x09BE;&#x09AF;&#x09CB;&#x0997; &#x0995;&#x09F0;&#x0995;&#x09F7;<br><span style="opacity:.7;">Get detailed kundali matching from our expert astrologer.</span></div>
+      <div class="ct-title">বিবাহ পৰামৰ্শ লওক</div>
+      <div class="ct-sub">বিশেষজ্ঞ জ্যোতিষীৰ সৈতে বিস্তাৰিত কুণ্ডলী মিলন আৰু বিবাহ পৰামৰ্শৰ বাবে যোগাযোগ কৰক।<br><span style="opacity:.7;">Get detailed kundali matching from our expert astrologer.</span></div>
     </div>
-    <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="c-btn">&#x1F4AC; &nbsp;&#x09AA;&#x09B0;&#x09BE;&#x09AE;&#x09F0;&#x09CD;&#x09B6; &#x09B2;&#x0993;&#x0995;</a>
+    <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="c-btn">💬 &nbsp;পৰামৰ্শ লওক</a>
   </div>
 
   <div class="info-grid">
-    <div class="ic"><span class="ic-ico">&#x1F4FF;</span><div class="ic-title">&#x09B0;&#x09BE;&#x099C;&#x09AF;&#x09CB;&#x099F;&#x0995;</div><div class="ic-desc">&#x09B6;&#x09CD;&#x09B0;&#x09C7;&#x09B7;&#x09CD;&#x09A0; &#x09AE;&#x09BF;&#x09B2;&#x09A8;&#x09F7; &#x09A6;&#x09BE;&#x09AE;&#x09CD;&#x09AA;&#x09A4;&#x09CD;&#x09AF; &#x099C;&#x09C0;&#x09F1;&#x09A8; &#x09B8;&#x09C1;&#x0996;&#x09C0; &#x0986;&#x09F0;&#x09C1; &#x09B8;&#x09AE;&#x09CD;&#x09AA;&#x09A6;&#x09B6;&#x09BE;&#x09B2;&#x09C0;&#x09F7;</div></div>
-    <div class="ic"><span class="ic-ico">&#x1F31F;</span><div class="ic-title">&#x0989;&#x09A4;&#x09CD;&#x09A4;&#x09AE; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</div><div class="ic-desc">&#x09AD;&#x09BE;&#x09B2; &#x09AE;&#x09BF;&#x09B2;&#x09A8;&#x09F7; &#x09AA;&#x09BE;&#x09B0;&#x09B8;&#x09CD;&#x09AA;&#x09B0;&#x09BF;&#x0995; &#x09AC;&#x09CB;&#x099D;&#x09BE;&#x09AA;&#x09DC;&#x09BE; &#x0986;&#x09F0;&#x09C1; &#x09B8;&#x09AE;&#x09CD;&#x09AA;&#x09B0;&#x09CD;&#x0995; &#x09B6;&#x0995;&#x09CD;&#x09A4;&#x09BF;&#x09B6;&#x09BE;&#x09B2;&#x09C0;&#x09F7;</div></div>
-    <div class="ic"><span class="ic-ico">&#x2696;&#xFE0F;</span><div class="ic-title">&#x09AE;&#x09A7;&#x09CD;&#x09AF;&#x09AE; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</div><div class="ic-desc">&#x09B8;&#x09BE;&#x09A7;&#x09BE;&#x09B0;&#x09A3; &#x09AE;&#x09BF;&#x09B2;&#x09A8;&#x09F7; &#x0995;&#x09BF;&#x099B;&#x09C1; &#x09B8;&#x09AE;&#x09A8;&#x09CD;&#x09AC;&#x09AF;&#x09BC;&#x09B0; &#x09AA;&#x09CD;&#x09B0;&#x09AF;&#x09BC;&#x09CB;&#x099C;&#x09A8; &#x09B9;&#x09AC; &#x09AA;&#x09BE;&#x09B0;&#x09C7;&#x09F7;</div></div>
+    <div class="ic"><span class="ic-ico">📿</span><div class="ic-title">ৰাজযোটক</div><div class="ic-desc">শ্ৰেষ্ঠ মিলন। দাম্পত্য জীৱন সুখী আৰু সম্পদশালী।</div></div>
+    <div class="ic"><span class="ic-ico">🌟</span><div class="ic-title">উত্তম মিলন</div><div class="ic-desc">ভাল মিলন। পাৰস্পৰিক বোজাপৰা আৰু সম্পৰ্ক শক্তিশালী।</div></div>
+    <div class="ic"><span class="ic-ico">⚖️</span><div class="ic-title">মধ্যম মিলন</div><div class="ic-desc">সাধাৰণ মিলন। কিছু সমন্বয়ৰ প্ৰয়োজন হব পাৰে।</div></div>
   </div>
 </main>
 
 <footer>
-  <div class="ft-logo">&#x1FA90; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AE;&#x09BF;&#x09B2;&#x09A8; &#x0995;&#x09C7;&#x09B2;&#x0995;&#x09C1;&#x09B2;&#x09C7;&#x099F;&#x09B0;</div>
-  <div class="ft-desc">&#x098F;&#x0987; &#x0995;&#x09C7;&#x09B2;&#x0995;&#x09C1;&#x09B2;&#x09C7;&#x099F;&#x09B0; &#x0995;&#x09C7;&#x09F1;&#x09B2; &#x09AA;&#x09B0;&#x09AE;&#x09CD;&#x09AA;&#x09B0;&#x09BE;&#x0997;&#x09A4; &#x099C;&#x09CD;&#x09AF;&#x09CB;&#x09A4;&#x09BF;&#x09B7; &#x09B6;&#x09BE;&#x09B8;&#x09CD;&#x09A4;&#x09CD;&#x09B0;&#x09B0; &#x0993;&#x09AA;&#x09F0;&#x09A4; &#x0986;&#x09A7;&#x09BE;&#x09B0;&#x09BF;&#x09A4;&#x09F7;</div>
+  <div class="ft-logo">🪐 ৰাশি মিলন কেলকুলেটৰ</div>
+  <div class="ft-desc">এই কেলকুলেটৰ কেৱল পৰম্পৰাগত জ্যোতিষ শাস্ত্ৰৰ ওপৰত আধাৰিত।</div>
   <div class="ft-div"></div>
-  <div class="ft-credit">Designed &amp; Developed with &#x2665; by <strong>Himangshu</strong></div>
+  <div class="ft-credit">Designed &amp; Developed with ♥ by <strong>Himangshu</strong></div>
 </footer>
 
+<!-- WhatsApp Floating Button -->
 <div class="wa-float">
-  <span class="wa-tip">&#x1F4E4; &#x098F;&#x0987; &#x099F;&#x09C1;&#x09B2; &#x09B6;&#x09CD;&#x09F1;&#x09C7;&#x09AF;&#x09BC;&#x09BE;&#x09F0; &#x0995;&#x09F0;&#x0995;</span>
-  <button class="wa-btn" id="shareBtn" aria-label="Share">
+  <span class="wa-tip">📤 এই টুল শ্ব়েয়াৰ কৰক</span>
+  <button class="wa-btn" id="shareBtn" aria-label="Share via WhatsApp">
     <svg class="wa-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </button>
 </div>
 
+<!-- Share Modal -->
 <div class="modal-ov" id="shareModal">
   <div class="share-modal">
     <div class="modal-handle"></div>
-    <div class="modal-title">&#x1F4E4; &#x098F;&#x0987; &#x099F;&#x09C1;&#x09B2; &#x09B6;&#x09CD;&#x09F1;&#x09C7;&#x09AF;&#x09BC;&#x09BE;&#x09F0; &#x0995;&#x09F0;&#x0995;</div>
+    <div class="modal-title">📤 এই টুল শ্ব়েয়াৰ কৰক</div>
     <div class="share-opts">
       <button class="sopt wa" id="shareWA">
-        <span class="sopt-ico"><svg width="36" height="36" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+        <span class="sopt-ico">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="#25D366">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </span>
         <span class="sopt-lbl">WhatsApp</span>
-        <span class="sopt-sub">&#x09AC;&#x09A8;&#x09CD;&#x09A7;&#x09C1;&#x0995; &#x09AA;&#x09A0;&#x09BE;&#x0993;&#x0995;</span>
+        <span class="sopt-sub">বন্ধুক পঠাওক</span>
       </button>
       <button class="sopt" id="shareFB">
-        <span class="sopt-ico">&#x1F535;</span>
+        <span class="sopt-ico">🔵</span>
         <span class="sopt-lbl">Facebook</span>
-        <span class="sopt-sub">Facebook-&#x09A4; &#x09B6;&#x09CD;&#x09F1;&#x09C7;&#x09AF;&#x09BC;&#x09BE;&#x09F0;</span>
+        <span class="sopt-sub">Facebook-ত শ্ব়েয়াৰ</span>
       </button>
       <button class="sopt" id="shareLink">
-        <span class="sopt-ico">&#x1F517;</span>
-        <span class="sopt-lbl">&#x09B2;&#x09BF;&#x0982;&#x0995; &#x0995;&#x09AA;&#x09BF; &#x0995;&#x09F0;&#x0995;</span>
+        <span class="sopt-ico">🔗</span>
+        <span class="sopt-lbl">লিংক কপি কৰক</span>
         <span class="sopt-sub">Copy link</span>
       </button>
       <button class="sopt" id="shareMore">
-        <span class="sopt-ico">&#x1F4F1;</span>
-        <span class="sopt-lbl">&#x0985;&#x09A8;&#x09CD;&#x09AF; &#x098F;&#x09AA;</span>
+        <span class="sopt-ico">📱</span>
+        <span class="sopt-lbl">অন্য এপ</span>
         <span class="sopt-sub">More options</span>
       </button>
     </div>
-    <button class="modal-close" id="modalClose">&#x09AC;&#x09A8;&#x09CD;&#x09A7; &#x0995;&#x09F0;&#x0995; &middot; Close</button>
+    <button class="modal-close" id="modalClose">বন্ধ কৰক · Close</button>
   </div>
 </div>
 
@@ -319,28 +384,58 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 <script>
 (function() {
 
-var rashiData = {
-  "Mesha":    { as:"মেষ",     symbol:"♈", letters:"A, L, E, M",      arr:["A","L","E","M"],    raj:["মেষ","মিথুন","কৰ্কট","মকৰ","কুম্ভ"],               uttam:["ধনু"],      mad:["মীন","বৃশ্চিক"] },
-  "Vrishabha":{ as:"বৃষ",     symbol:"♉", letters:"B, V, U, W",      arr:["B","V","U","W"],    raj:["বৃষ","কৰ্কট","সিংহ","বৃশ্চিক","কুম্ভ","মীন"],     uttam:["মকৰ"],     mad:["মেষ","তুলা"] },
-  "Mithuna":  { as:"মিথুন",  symbol:"♊", letters:"K, CH, GH",       arr:["K","C","G"],        raj:["মিথুন","সিংহ","কৰ্কট","মীন","মেষ"],               uttam:["কুম্ভ"],   mad:["বৃষ","মকৰ"] },
-  "Karkata":  { as:"কৰ্কট",  symbol:"♋", letters:"D, H, N",         arr:["D","H","N"],        raj:["কৰ্কট","কন্যা","তুলা","মকৰ","মেষ","বৃষ"],        uttam:["মীন"],     mad:["মিথুন","ধনু"] },
-  "Simha":    { as:"সিংহ",   symbol:"♌", letters:"M, T, A",         arr:["M","T","A"],        raj:["সিংহ","তুলা","বৃষ","মিথুন","বৃশ্চিক"],           uttam:["মেষ"],     mad:["কৰ্কট","মীন"] },
-  "Kanya":    { as:"কন্যা",  symbol:"♍", letters:"P, TH, N",        arr:["P","T","N"],        raj:["কন্যা","বৃশ্চিক","ধনু","মীন","মিথুন","কৰ্কট"],   uttam:["বৃষ"],     mad:["সিংহ","কুম্ভ"] },
-  "Tula":     { as:"তুলা",   symbol:"♎", letters:"R, T, SH",        arr:["R","T","S"],        raj:["তুলা","ধনু","মকৰ","কৰ্কট","সিংহ"],               uttam:["মিথুন"],   mad:["বৃষ","কন্যা"] },
-  "Vrischika":{ as:"বৃশ্চিক",symbol:"♏", letters:"N, Y, L",         arr:["N","Y","L"],        raj:["বৃশ্চিক","মকৰ","কুম্ভ","বৃষ","সিংহ","কন্যা"],   uttam:["কৰ্কট"],   mad:["তুলা","মেষ"] },
-  "Dhanu":    { as:"ধনু",    symbol:"♐", letters:"BH, DH, F, D",    arr:["B","D","F"],        raj:["ধনু","কুম্ভ","মীন","কৰ্কট","তুলা"],             uttam:["সিংহ"],    mad:["বৃষ","কৰ্কট"] },
-  "Makara":   { as:"মকৰ",   symbol:"♑", letters:"KH, J, N",         arr:["K","J","N"],        raj:["মকৰ","মীন","কৰ্কট","তুলা","বৃষ"],              uttam:["কন্যা"],   mad:["ধনু","মিথুন"] },
-  "Kumbha":   { as:"কুম্ভ",  symbol:"♒", letters:"G, S, SH",        arr:["G","S"],            raj:["কুম্ভ","মেষ","বৃষ","বৃশ্চিক","ধনু"],            uttam:["তুলা"],    mad:["মকৰ","কন্যা"] },
-  "Meena":    { as:"মীন",    symbol:"♓", letters:"D, CH, Z, TH",    arr:["D","C","Z","T"],    raj:["মীন","বৃষ","মিথুন","কন্যা","ধনু","মকৰ"],        uttam:["বৃশ্চিক"], mad:["কুম্ভ","সিংহ"] }
+// ============================================================
+// DATA — from the Excel sheet (Male Rashi → compatible Female Rashis)
+// raj = ৰাজযোটক, uttam = উত্তম মিলন, mad = মধ্যম মিলন
+// ============================================================
+var DATA = {
+  "মেষ":     { sym:"♈", en:"Mesha",     letters:"A, L, E",    arr:["A","L","E"],
+                raj:["মেষ","মিথুন","কৰ্কট","মকৰ","কুম্ভ"],              uttam:["ধনু"],       mad:["মীন","বৃশ্চিক"] },
+  "বৃষ":     { sym:"♉", en:"Vrishabha", letters:"B, V, U, W", arr:["B","V","U","W"],
+                raj:["বৃষ","কৰ্কট","সিংহ","বৃশ্চিক","কুম্ভ","মীন"],    uttam:["মকৰ"],      mad:["মেষ","তুলা"] },
+  "মিথুন":  { sym:"♊", en:"Mithuna",   letters:"K, CH, GH",  arr:["K","C","G"],
+                raj:["মিথুন","সিংহ","কৰ্কট","মীন","মেষ"],              uttam:["কুম্ভ"],    mad:["বৃষ","মকৰ"] },
+  "কৰ্কট":  { sym:"♋", en:"Karkata",   letters:"D, H, N",    arr:["D","H","N"],
+                raj:["কৰ্কট","কন্যা","তুলা","মকৰ","মেষ","বৃষ"],       uttam:["মীন"],      mad:["মিথুন","ধনু"] },
+  "সিংহ":   { sym:"♌", en:"Simha",     letters:"M, T, A",    arr:["M","T","A"],
+                raj:["সিংহ","তুলা","বৃষ","মিথুন","বৃশ্চিক"],           uttam:["মেষ"],      mad:["কৰ্কট","মীন"] },
+  "কন্যা":  { sym:"♍", en:"Kanya",     letters:"P, TH, N",   arr:["P","T","N"],
+                raj:["কন্যা","বৃশ্চিক","ধনু","মীন","মিথুন","কৰ্কট"],  uttam:["বৃষ"],      mad:["সিংহ","কুম্ভ"] },
+  "তুলা":   { sym:"♎", en:"Tula",      letters:"R, T, SH",   arr:["R","T","S"],
+                raj:["তুলা","ধনু","মকৰ","কৰ্কট","সিংহ"],              uttam:["মিথুন"],    mad:["বৃষ","কন্যা"] },
+  "বৃশ্চিক":{ sym:"♏", en:"Vrischika", letters:"N, Y, L",    arr:["N","Y","L"],
+                raj:["বৃশ্চিক","মকৰ","কুম্ভ","বৃষ","সিংহ","কন্যা"],  uttam:["কৰ্কট"],   mad:["তুলা","মেষ"] },
+  "ধনু":    { sym:"♐", en:"Dhanu",     letters:"BH, DH, F",  arr:["B","D","F"],
+                raj:["ধনু","কুম্ভ","মীন","কৰ্কট","তুলা"],             uttam:["সিংহ"],     mad:["বৃষ","কৰ্কট"] },
+  "মকৰ":   { sym:"♑", en:"Makara",    letters:"KH, J, N",   arr:["K","J","N"],
+                raj:["মকৰ","মীন","কৰ্কট","তুলা","বৃষ"],              uttam:["কন্যা"],    mad:["ধনু","মিথুন"] },
+  "কুম্ভ":  { sym:"♒", en:"Kumbha",   letters:"G, S, SH",   arr:["G","S"],
+                raj:["কুম্ভ","মেষ","বৃষ","বৃশ্চিক","ধনু"],            uttam:["তুলা"],     mad:["মকৰ","কন্যা"] },
+  "মীন":    { sym:"♓", en:"Meena",    letters:"D, CH, Z, TH",arr:["D","C","Z","T"],
+                raj:["মীন","বৃষ","মিথুন","কন্যা","ধনু","মকৰ"],       uttam:["বৃশ্চিক"],  mad:["কুম্ভ","সিংহ"] }
 };
-var rashiKeys = Object.keys(rashiData);
+
+var KEYS = Object.keys(DATA);
+
+// Pre-build reverse lookup for female:
+// femREV[femaleRashi] = { raj:[maleRashis], uttam:[maleRashis], mad:[maleRashis] }
+var femREV = {};
+KEYS.forEach(function(femKey) {
+  femREV[femKey] = { raj:[], uttam:[], mad:[] };
+});
+KEYS.forEach(function(maleKey) {
+  var d = DATA[maleKey];
+  d.raj.forEach(function(f) { if(femREV[f]) femREV[f].raj.push(maleKey); });
+  d.uttam.forEach(function(f) { if(femREV[f]) femREV[f].uttam.push(maleKey); });
+  d.mad.forEach(function(f) { if(femREV[f]) femREV[f].mad.push(maleKey); });
+});
 
 var myGender = null;
 var myRashi  = null;
 
-function el(id) { return document.getElementById(id); }
+function el(id){ return document.getElementById(id); }
 
-function updateSteps(s) {
+function updateSteps(s){
   ["step1","step2","step3"].forEach(function(id,i){
     var e=el(id); e.className="step-item";
     if(i+1<s) e.classList.add("done");
@@ -353,24 +448,25 @@ function updateSteps(s) {
 
 function stars(n){
   var s="";
-  for(var i=1;i<=5;i++) s+='<span class="star '+(i<=n?"on":"off")+'">&#x2605;</span>';
+  for(var i=1;i<=5;i++) s+='<span class="star '+(i<=n?"on":"off")+'">★</span>';
   return s;
 }
 
+// Build pills for a list of rashi names
 function pills(list, cls){
-  return list.map(function(as){
-    var key=rashiKeys.filter(function(k){return rashiData[k].as===as;})[0];
-    if(!key) return "";
-    var d=rashiData[key];
-    return '<span class="pill '+cls+'"><span class="pill-sym">'+d.symbol+'</span>'+d.as+'<span class="pill-let">'+d.letters+'</span></span>';
+  return list.map(function(rashi){
+    if(!DATA[rashi]) return "";
+    var d = DATA[rashi];
+    return '<span class="pill '+cls+'"><span class="pill-sym">'+d.sym+'</span>'+rashi+'<span class="pill-let">'+d.letters+'</span></span>';
   }).join("");
 }
 
-function score(key){
-  var d=rashiData[key];
-  var t=d.raj.length*5+d.uttam.length*4+d.mad.length*3;
-  var m=(d.raj.length+d.uttam.length+d.mad.length)*5;
-  return Math.round(t/m*100);
+// Compute a display score (based on tier counts)
+function computeScore(rajList, uttamList, madList){
+  var num = rajList.length*5 + uttamList.length*4 + madList.length*3;
+  var den = (rajList.length + uttamList.length + madList.length) * 5;
+  if(!den) return 0;
+  return Math.round(num/den*100);
 }
 
 function toast(msg){
@@ -378,167 +474,268 @@ function toast(msg){
   setTimeout(function(){t.classList.remove("show");},3000);
 }
 
-function selectGender(g){
-  myGender=g; myRashi=null;
-  el("maleBtn").className="gbtn"+(g==="male"?" male-on":"");
-  el("femaleBtn").className="gbtn"+(g==="female"?" fem-on":"");
-  el("rashiCardIcon").textContent=g==="male"?"&#9794;":"&#9792;";
-  el("rashiCardTitle").innerHTML="&#x0986;&#x09AA;&#x09CB;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AC;&#x09BE;&#x099B;&#x0995; &nbsp;&middot;&nbsp; <span style='font-size:13px;color:var(--text3);font-weight:400;'>Your Rashi ("+(g==="male"?"Male":"Female")+")</span>";
-  el("rashiCard").style.display="block";
-  el("nameInput").value="";
-  el("nameHint").className="name-hint";
-  el("selectedBar").innerHTML="";
-  buildGrid();
-  updateSteps(2);
-  el("resultArea").innerHTML='<div class="empty"><span class="empty-ico">'+(g==="male"?"&#x1F52E;":"&#x1F338;")+'</span><div class="empty-t">&#x098F;&#x09A4;&#x09BF;&#x09AF;&#x09BC;&#x09BE; &#x0986;&#x09AA;&#x09CB;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AC;&#x09BE;&#x099B;&#x0995;</div><div class="empty-s">&#x0993;&#x09AA;&#x09F0;&#x09A4; &#x09A8;&#x09BE;&#x09AE; &#x09B2;&#x09BF;&#x0996;&#x0995; &#x09AC;&#x09BE; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AC;&#x09BE;&#x099B;&#x0995;</div></div>';
-  setTimeout(function(){el("rashiCard").scrollIntoView({behavior:"smooth",block:"nearest"});},120);
-}
-
+// ---- Name letter suggestion ----
 function onNameInput(v){
-  var ch=v.trim().toUpperCase().charAt(0);
-  var hint=el("nameHint");
-  if(!ch){hint.className="name-hint";clearSugg();return;}
-  var matches=rashiKeys.filter(function(k){return rashiData[k].arr.indexOf(ch)>-1;});
+  var ch = v.trim().toUpperCase().charAt(0);
+  var hint = el("nameHint");
+  if(!ch){ hint.className="name-hint"; clearSugg(); return; }
+
+  var matches = KEYS.filter(function(k){ return DATA[k].arr.indexOf(ch) > -1; });
   hlSugg(matches);
-  if(matches.length>0){
-    var names=matches.map(function(k){return "<strong>"+rashiData[k].symbol+" "+rashiData[k].as+"</strong>";}).join(", ");
-    hint.innerHTML='"<strong>'+ch+'</strong>" &#x0986;&#x0996;&#x09F0;&#x09C7;&#x09B0;&#x09C7; &#x0986;&#x09B0;&#x09AE;&#x09CD;&#x09AD; &#x09A8;&#x09BE;&#x09AE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF;: '+names+'<br><span style="font-size:11px;opacity:.65;">Names starting with "'+ch+'" belong to: '+matches.map(function(k){return rashiData[k].as;}).join(", ")+"</span>";
-    hint.className="name-hint show";
-    if(matches.length===1) selectRashi(matches[0]);
+
+  if(matches.length > 0){
+    var names = matches.map(function(k){ return "<strong>"+DATA[k].sym+" "+k+"</strong>"; }).join(", ");
+    hint.innerHTML = '"<strong>'+ch+'</strong>" আখৰেৰে আৰম্ভ নামৰ ৰাশি: '+names+
+      '<br><span style="font-size:11px;opacity:.65;">Names starting with "'+ch+'" belong to: '+
+      matches.map(function(k){return k;}).join(", ")+'</span>';
+    hint.className = "name-hint show";
+    if(matches.length === 1) selectRashi(matches[0]);
   } else {
-    hint.innerHTML='"<strong>'+ch+'</strong>" &#x0986;&#x0996;&#x09F0;&#x09B0; &#x09AC;&#x09BE;&#x09AC;&#x09C7; &#x0995;&#x09CB;&#x09A8;&#x09CB; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AA;&#x09CB;&#x09F1;&#x09BE; &#x09A8;&#x0997;&#x09B2;&#x0964; &#x09A4;&#x09B2;&#x09B0; &#x0997;&#x09CD;&#x09B0;&#x09BF;&#x09A1;&#x09B0; &#x09AA;&#x09B0;&#x09BE; &#x09AC;&#x09BE;&#x099B;&#x0995;&#x0964;<br><span style="font-size:11px;opacity:.65;">No rashi found for "'+ch+'". Please select manually.</span>';
-    hint.className="name-hint show";
+    hint.innerHTML = '"<strong>'+ch+'</strong>" আখৰৰ বাবে কোনো ৰাশি পোৱা নগল। তলৰ গ্ৰিডৰ পৰা বাছক।'+
+      '<br><span style="font-size:11px;opacity:.65;">No rashi found for "'+ch+'". Please select manually below.</span>';
+    hint.className = "name-hint show";
   }
 }
 
-function clearSugg(){document.querySelectorAll(".rbtn").forEach(function(b){b.classList.remove("suggested");});}
-function hlSugg(matches){document.querySelectorAll(".rbtn").forEach(function(b){b.classList.toggle("suggested",matches.indexOf(b.dataset.key)>-1);});}
+function clearSugg(){ document.querySelectorAll(".rbtn").forEach(function(b){ b.classList.remove("suggested"); }); }
+function hlSugg(matches){ document.querySelectorAll(".rbtn").forEach(function(b){ b.classList.toggle("suggested", matches.indexOf(b.dataset.key) > -1); }); }
 
+// ---- Gender select ----
+function selectGender(g){
+  myGender = g; myRashi = null;
+  el("maleBtn").className = "gbtn" + (g==="male" ? " male-on" : "");
+  el("femaleBtn").className = "gbtn" + (g==="female" ? " fem-on" : "");
+  el("rashiCardIcon").textContent = g==="male" ? "♂" : "♀";
+  el("rashiCardTitle").innerHTML = "আপোনাৰ ৰাশি বাছক &nbsp;·&nbsp; <span style='font-size:13px;color:var(--text3);font-weight:400;'>Your Rashi ("+(g==="male"?"Male / দৰা":"Female / কইনা")+")</span>";
+  el("rashiCard").style.display = "block";
+  el("nameInput").value = "";
+  el("nameHint").className = "name-hint";
+  el("selectedBar").innerHTML = "";
+  buildGrid();
+  updateSteps(2);
+  el("resultArea").innerHTML = '<div class="empty"><span class="empty-ico">'+(g==="male"?"🔮":"🌸")+'</span><div class="empty-t">এতিয়া আপোনাৰ ৰাশি বাছক</div><div class="empty-s">ওপৰত নাম লিখক বা ৰাশি বাছক</div></div>';
+  setTimeout(function(){ el("rashiCard").scrollIntoView({behavior:"smooth",block:"nearest"}); }, 120);
+}
+
+// ---- Build rashi grid ----
 function buildGrid(){
-  var g=el("rashiGrid"); g.innerHTML="";
-  rashiKeys.forEach(function(key){
-    var d=rashiData[key];
-    var b=document.createElement("button");
-    b.className="rbtn"; b.dataset.key=key;
-    b.innerHTML='<span class="rsym">'+d.symbol+'</span><span class="rnam">'+d.as+'</span><span class="rlet">'+d.letters+'</span>';
-    b.addEventListener("click",function(){selectRashi(key);});
+  var g = el("rashiGrid"); g.innerHTML = "";
+  KEYS.forEach(function(key){
+    var d = DATA[key];
+    var b = document.createElement("button");
+    b.className = "rbtn"; b.dataset.key = key;
+    b.innerHTML = '<span class="rsym">'+d.sym+'</span><span class="rnam">'+key+'</span><span class="rlet">'+d.letters+'</span>';
+    b.addEventListener("click", function(){ selectRashi(key); });
     g.appendChild(b);
   });
 }
 
+// ---- Select rashi ----
 function selectRashi(key){
-  myRashi=key;
-  var sc=myGender==="male"?"sel-m":"sel-f";
+  myRashi = key;
+  var sc = myGender==="male" ? "sel-m" : "sel-f";
   document.querySelectorAll(".rbtn").forEach(function(b){
     b.classList.remove("sel-m","sel-f");
-    if(b.dataset.key===key) b.classList.add(sc);
+    if(b.dataset.key === key) b.classList.add(sc);
   });
-  var d=rashiData[key];
-  var gi=myGender==="male"?"&#x1F468;":"&#x1F469;";
-  var gl=myGender==="male"?"&#x09A6;&#x09B0;&#x09BE; (Male)":"&#x0995;&#x0987;&#x09A8;&#x09BE; (Female)";
-  var bar=document.createElement("div");
-  bar.className="sel-bar";
-  bar.innerHTML='<span class="sel-bar-icon">'+d.symbol+'</span><div class="sel-bar-info"><div class="sel-bar-name">'+gi+' '+d.as+' &middot; '+gl+'</div><div class="sel-bar-sub">&#x0986;&#x0996;&#x09F0;: '+d.letters+'</div></div><button class="sel-bar-chg" id="clearBtn">&#x09AA;&#x09B0;&#x09BF;&#x09AC;&#x09B0;&#x09CD;&#x09A4;&#x09A8; &#x2715;</button>';
-  el("selectedBar").innerHTML="";
+  var d = DATA[key];
+  var gi = myGender==="male" ? "👨" : "👩";
+  var gl = myGender==="male" ? "দৰা (Male)" : "কইনা (Female)";
+  var bar = document.createElement("div");
+  bar.className = "sel-bar";
+  bar.innerHTML = '<span class="sel-bar-icon">'+d.sym+'</span>'+
+    '<div class="sel-bar-info">'+
+      '<div class="sel-bar-name">'+gi+' '+key+' · '+gl+'</div>'+
+      '<div class="sel-bar-sub">নামৰ আখৰ: '+d.letters+'</div>'+
+    '</div>'+
+    '<button class="sel-bar-chg" id="clearBtn">পৰিৱৰ্তন ✕</button>';
+  el("selectedBar").innerHTML = "";
   el("selectedBar").appendChild(bar);
-  document.getElementById("clearBtn").addEventListener("click",clearSel);
+  document.getElementById("clearBtn").addEventListener("click", clearSel);
   updateSteps(3);
   renderResult(key);
-  setTimeout(function(){el("resultArea").scrollIntoView({behavior:"smooth",block:"nearest"});},150);
+  setTimeout(function(){ el("resultArea").scrollIntoView({behavior:"smooth",block:"nearest"}); }, 150);
 }
 
 function clearSel(){
-  myRashi=null;
-  document.querySelectorAll(".rbtn").forEach(function(b){b.classList.remove("sel-m","sel-f");});
-  el("selectedBar").innerHTML="";
-  el("nameInput").value="";
-  el("nameHint").className="name-hint";
+  myRashi = null;
+  document.querySelectorAll(".rbtn").forEach(function(b){ b.classList.remove("sel-m","sel-f"); });
+  el("selectedBar").innerHTML = "";
+  el("nameInput").value = "";
+  el("nameHint").className = "name-hint";
   clearSugg(); updateSteps(2);
-  el("resultArea").innerHTML='<div class="empty"><span class="empty-ico">&#x1F52E;</span><div class="empty-t">&#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AC;&#x09BE;&#x099B;&#x0995;</div><div class="empty-s">&#x0993;&#x09AA;&#x09F0;&#x09B0; &#x0997;&#x09CD;&#x09B0;&#x09BF;&#x09A1;&#x09B0; &#x09AA;&#x09B0;&#x09BE; &#x0986;&#x09AA;&#x09CB;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &#x09AC;&#x09BE;&#x099B;&#x0995;</div></div>';
+  el("resultArea").innerHTML = '<div class="empty"><span class="empty-ico">🔮</span><div class="empty-t">ৰাশি বাছক</div><div class="empty-s">ওপৰৰ গ্ৰিডৰ পৰা আপোনাৰ ৰাশি বাছক</div></div>';
 }
 
+// ====================================================================
+// MAIN RENDER — correct reverse lookup for female
+// ====================================================================
 function renderResult(key){
-  var d=rashiData[key]; var area=el("resultArea");
-  var im=myGender==="male";
-  var sc=im?"m":"f";
-  var gl=im?"&#x09A6;&#x09B0;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &middot; Male's Rashi":"&#x0995;&#x0987;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &middot; Female's Rashi";
-  var mi=im?"&#x1F468;":"&#x1F469;";
-  var oi=im?"&#x1F469;":"&#x1F468;";
-  var mr=im?"&#x09A6;&#x09B0;&#x09BE; &middot; Groom":"&#x0995;&#x0987;&#x09A8;&#x09BE; &middot; Bride";
-  var or=im?"&#x0995;&#x0987;&#x09A8;&#x09BE; &middot; Bride":"&#x09A6;&#x09B0;&#x09BE; &middot; Groom";
-  var ors=im?"&#x0995;&#x0987;&#x09A8;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF;":"&#x09A6;&#x09B0;&#x09BE;&#x09B0; &#x09B0;&#x09BE;&#x09B6;&#x09BF;";
-  var ops=im?"Best Bride Rashis":"Best Groom Rashis";
-  var sc2=score(key);
+  var area = el("resultArea");
+  var d = DATA[key];
+  var isMale = myGender === "male";
 
-  area.innerHTML=
+  // Get the three compatibility lists
+  // If male: use the sheet directly (which male rashi works with which female)
+  // If female: reverse lookup — which male rashi lists this female in their columns
+  var rajList, uttamList, madList;
+  if(isMale){
+    rajList   = d.raj;
+    uttamList = d.uttam;
+    madList   = d.mad;
+  } else {
+    rajList   = femREV[key].raj;
+    uttamList = femREV[key].uttam;
+    madList   = femREV[key].mad;
+  }
+
+  var sc = isMale ? "m" : "f";
+  var userEmoji  = isMale ? "👨" : "👩";
+  var matchEmoji = isMale ? "👩" : "👨";
+  var userRole   = isMale ? "দৰাৰ ৰাশি · Groom's Rashi" : "কইনাৰ ৰাশি · Bride's Rashi";
+  var matchLabel = isMale ? "কইনা · Bride" : "দৰা · Groom";
+  var matchTitle = isMale ? "কইনাৰ উপযুক্ত ৰাশি" : "দৰাৰ উপযুক্ত ৰাশি";
+  var matchSub   = isMale ? "Best Bride Rashis for this Groom" : "Best Groom Rashis for this Bride";
+  var score2     = computeScore(rajList, uttamList, madList);
+
+  // Opposite gender name first-letters from the compatible rashis
+  var oppLetters = [];
+  var oppLetterMap = {}; // letter -> [rashi names]
+  var allCompatRashis = rajList.concat(uttamList).concat(madList);
+  allCompatRashis.forEach(function(r){
+    if(DATA[r]){
+      DATA[r].arr.forEach(function(letter){
+        if(!oppLetterMap[letter]) oppLetterMap[letter] = [];
+        if(oppLetterMap[letter].indexOf(r) === -1) oppLetterMap[letter].push(r);
+        if(oppLetters.indexOf(letter) === -1) oppLetters.push(letter);
+      });
+    }
+  });
+  oppLetters.sort();
+
+  // Build name-suggestion section (opposite gender names by first letter)
+  var nameSuggestHtml = '';
+  if(oppLetters.length > 0){
+    // Separate by tier for the tab system
+    var rajLetters = []; var rajLetterMap = {};
+    var uttamLetters = []; var uttamLetterMap = {};
+    rajList.forEach(function(r){
+      if(DATA[r]) DATA[r].arr.forEach(function(l){
+        if(!rajLetterMap[l]) rajLetterMap[l]=[];
+        if(rajLetterMap[l].indexOf(r)===-1) rajLetterMap[l].push(r);
+        if(rajLetters.indexOf(l)===-1) rajLetters.push(l);
+      });
+    });
+    uttamList.forEach(function(r){
+      if(DATA[r]) DATA[r].arr.forEach(function(l){
+        if(!uttamLetterMap[l]) uttamLetterMap[l]=[];
+        if(uttamLetterMap[l].indexOf(r)===-1) uttamLetterMap[l].push(r);
+        if(uttamLetters.indexOf(l)===-1) uttamLetters.push(l);
+      });
+    });
+
+    var matchGenderLabel = isMale ? "কইনাৰ নাম" : "দৰাৰ নাম";
+
+    nameSuggestHtml = '<div class="name-suggest-box">'+
+      '<div class="nsb-title">✨ '+matchGenderLabel+'ৰ প্ৰথম আখৰ · Suggested Name First Letters</div>'+
+      '<div class="nsb-letters" id="nsbLetters">'+
+        oppLetters.map(function(l){
+          var tier = rajLetters.indexOf(l)>-1 ? 'ৰাজযোটক' : (uttamLetters.indexOf(l)>-1 ? 'উত্তম' : 'মধ্যম');
+          var col = rajLetters.indexOf(l)>-1 ? '#4CAF20' : (uttamLetters.indexOf(l)>-1 ? '#1DB38A' : '#E8920A');
+          var rashisForLetter = oppLetterMap[l].join(", ");
+          return '<div class="nsb-letter" style="border-color:'+col+'20;background:'+col+'08;" title="'+rashisForLetter+'">'+
+            '<span class="nl-char" style="color:'+col+';">'+l+'</span>'+
+            '<span class="nl-rashi" style="color:'+col+';">'+tier+'</span>'+
+          '</div>';
+        }).join('')+
+      '</div>'+
+      '<div class="nsb-note">🟢 ৰাজযোটক &nbsp;|&nbsp; 🟦 উত্তম মিলন &nbsp;|&nbsp; 🟡 মধ্যম মিলন<br>'+
+        (isMale ? "কইনাৰ নামৰ প্ৰথম আখৰ এই তালিকাৰ পৰা বাছক।" : "দৰাৰ নামৰ প্ৰথম আখৰ এই তালিকাৰ পৰা বাছক।")+'</div>'+
+    '</div>';
+  }
+
+  area.innerHTML =
     '<div class="result-card">'+
-    '<div class="res-hdr '+sc+'">'+
-      '<div class="res-ico">'+d.symbol+'</div>'+
-      '<div>'+
-        '<div class="res-lbl">'+gl+'</div>'+
-        '<div class="res-name">'+d.as+'</div>'+
-        '<div class="res-letters">&#x09A8;&#x09BE;&#x09AE;&#x09B0; &#x0986;&#x0996;&#x09F0;: '+d.letters+'</div>'+
+      '<div class="res-hdr '+sc+'">'+
+        '<div class="res-ico">'+d.sym+'</div>'+
+        '<div>'+
+          '<div class="res-lbl">'+userRole+'</div>'+
+          '<div class="res-name">'+key+'</div>'+
+          '<div class="res-letters">নামৰ আখৰ: '+d.letters+'</div>'+
+        '</div>'+
       '</div>'+
-    '</div>'+
-    '<div class="match-between">'+
-      '<div class="mbp '+(im?"m":"f")+'">'+
-        '<span class="mbp-ico">'+mi+'</span>'+
-        '<div class="mbp-rashi">'+d.as+' '+d.symbol+'</div>'+
-        '<div class="mbp-lbl">'+mr+'</div>'+
+      '<div class="match-between">'+
+        '<div class="mbp '+(isMale?"m":"f")+'">'+
+          '<span class="mbp-ico">'+userEmoji+'</span>'+
+          '<div class="mbp-rashi">'+key+' '+d.sym+'</div>'+
+          '<div class="mbp-lbl">'+(isMale?"দৰা · Groom":"কইনা · Bride")+'</div>'+
+        '</div>'+
+        '<div class="mb-arrow">💞</div>'+
+        '<div class="mbp '+(isMale?"f":"m")+'">'+
+          '<span class="mbp-ico">'+matchEmoji+'</span>'+
+          '<div class="mbp-rashi">'+(isMale?"কইনাৰ ৰাশি":"দৰাৰ ৰাশি")+'</div>'+
+          '<div class="mbp-lbl">'+matchLabel+'</div>'+
+        '</div>'+
       '</div>'+
-      '<div class="mb-arrow">&#x1F49E;</div>'+
-      '<div class="mbp '+(im?"f":"m")+'">'+
-        '<span class="mbp-ico">'+oi+'</span>'+
-        '<div class="mbp-rashi">'+ors+'</div>'+
-        '<div class="mbp-lbl">'+or+'</div>'+
+      '<div class="compat">'+
+        '<div class="compat-lbl"><strong>সামগ্ৰিক সংগতি বিন্দু</strong><span style="color:var(--gold);font-weight:700;">'+score2+'%</span></div>'+
+        '<div class="compat-bg"><div class="compat-fill" id="cfill"></div></div>'+
       '</div>'+
-    '</div>'+
-    '<div class="compat">'+
-      '<div class="compat-lbl"><strong>&#x09B8;&#x09BE;&#x09AE;&#x0997;&#x09CD;&#x09B0;&#x09BF;&#x0995; &#x09B8;&#x0982;&#x0997;&#x09A4;&#x09BF; &#x09AC;&#x09BF;&#x09A8;&#x09CD;&#x09A6;&#x09C1;</strong><span style="color:var(--gold);font-weight:700;">'+sc2+'%</span></div>'+
-      '<div class="compat-bg"><div class="compat-fill" id="cfill"></div></div>'+
-    '</div>'+
-    '<div class="tier-sub-hdr">'+(im?"&#x1F469; &#x0995;&#x0987;&#x09A8;&#x09BE;&#x09B0;":"&#x1F468; &#x09A6;&#x09B0;&#x09BE;&#x09B0;")+'  &#x0989;&#x09AA;&#x09AF;&#x09C1;&#x0995;&#x09CD;&#x09A4; &#x09B0;&#x09BE;&#x09B6;&#x09BF; &nbsp;<span style="font-size:11px;color:var(--text3);font-weight:400;">&middot; '+ops+'</span></div>'+
-    '<div class="tier">'+
-      '<div class="tier-hdr"><span class="badge b-raj"><span class="bdot d-raj"></span>&#x09B0;&#x09BE;&#x099C;&#x09AF;&#x09CB;&#x099F;&#x0995;</span><span style="font-size:11px;color:var(--text3);">&#x09B6;&#x09CD;&#x09B0;&#x09C7;&#x09B7;&#x09CD;&#x09A0; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</span><span class="stars">'+stars(5)+'</span></div>'+
-      '<div class="pills">'+pills(d.raj,"p-raj")+'</div>'+
-    '</div>'+
-    '<div class="tier">'+
-      '<div class="tier-hdr"><span class="badge b-utt"><span class="bdot d-utt"></span>&#x0989;&#x09A4;&#x09CD;&#x09A4;&#x09AE; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</span><span style="font-size:11px;color:var(--text3);">&#x09AD;&#x09BE;&#x09B2; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</span><span class="stars">'+stars(4)+'</span></div>'+
-      '<div class="pills">'+pills(d.uttam,"p-utt")+'</div>'+
-    '</div>'+
-    '<div class="tier">'+
-      '<div class="tier-hdr"><span class="badge b-mad"><span class="bdot d-mad"></span>&#x09AE;&#x09A7;&#x09CD;&#x09AF;&#x09AE; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</span><span style="font-size:11px;color:var(--text3);">&#x09B8;&#x09BE;&#x09A7;&#x09BE;&#x09B0;&#x09A3; &#x09AE;&#x09BF;&#x09B2;&#x09A8;</span><span class="stars">'+stars(3)+'</span></div>'+
-      '<div class="pills">'+pills(d.mad,"p-mad")+'</div>'+
-    '</div>'+
+      nameSuggestHtml+
+      '<div class="tier-sub-hdr">'+(isMale?"👩 কইনাৰ":"👨 দৰাৰ")+' উপযুক্ত ৰাশি &nbsp;<span style="font-size:11px;color:var(--text3);font-weight:400;">· '+matchSub+'</span></div>'+
+      '<div class="tier">'+
+        '<div class="tier-hdr"><span class="badge b-raj"><span class="bdot d-raj"></span>ৰাজযোটক</span><span style="font-size:11px;color:var(--text3);">শ্ৰেষ্ঠ মিলন</span><span class="stars">'+stars(5)+'</span></div>'+
+        '<div class="pills">'+(rajList.length ? pills(rajList,"p-raj") : '<span style="font-size:12px;color:var(--text3);">কোনো ৰাশি নাই</span>')+'</div>'+
+      '</div>'+
+      '<div class="tier">'+
+        '<div class="tier-hdr"><span class="badge b-utt"><span class="bdot d-utt"></span>উত্তম মিলন</span><span style="font-size:11px;color:var(--text3);">ভাল মিলন</span><span class="stars">'+stars(4)+'</span></div>'+
+        '<div class="pills">'+(uttamList.length ? pills(uttamList,"p-utt") : '<span style="font-size:12px;color:var(--text3);">কোনো ৰাশি নাই</span>')+'</div>'+
+      '</div>'+
+      '<div class="tier">'+
+        '<div class="tier-hdr"><span class="badge b-mad"><span class="bdot d-mad"></span>মধ্যম মিলন</span><span style="font-size:11px;color:var(--text3);">সাধাৰণ মিলন</span><span class="stars">'+stars(3)+'</span></div>'+
+        '<div class="pills">'+(madList.length ? pills(madList,"p-mad") : '<span style="font-size:12px;color:var(--text3);">কোনো ৰাশি নাই</span>')+'</div>'+
+      '</div>'+
     '</div>';
 
-  setTimeout(function(){var f=el("cfill");if(f)f.style.width=sc2+"%";},200);
+  setTimeout(function(){
+    var f = el("cfill");
+    if(f) f.style.width = score2 + "%";
+  }, 200);
 }
 
-var SURL=window.location.href;
-var STXT="🪐 Rashi Milan Calculator — Find your best marriage match by name letters!";
+// ---- Share ----
+var SURL = window.location.href;
+var STXT = "🪐 ৰাশি মিলন কেলকুলেটৰ — নামৰ আখৰৰে বৈবাহিক মিলন বিচাৰক!\n\nRashi Milan Calculator — Find your best marriage match by name letters!";
 
-function openModal(){el("shareModal").classList.add("open");}
-function closeModal(){el("shareModal").classList.remove("open");}
+function openModal(){ el("shareModal").classList.add("open"); }
+function closeModal(){ el("shareModal").classList.remove("open"); }
 
-document.addEventListener("DOMContentLoaded",function(){
-  el("maleBtn").addEventListener("click",function(){selectGender("male");});
-  el("femaleBtn").addEventListener("click",function(){selectGender("female");});
-  el("nameInput").addEventListener("input",function(){onNameInput(this.value);});
-  el("shareBtn").addEventListener("click",openModal);
-  el("modalClose").addEventListener("click",closeModal);
-  el("shareModal").addEventListener("click",function(e){if(e.target===this)closeModal();});
-  el("shareWA").addEventListener("click",function(){closeModal();window.open("https://wa.me/?text="+encodeURIComponent(STXT+"\n\n"+SURL),"_blank");});
-  el("shareFB").addEventListener("click",function(){closeModal();window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SURL),"_blank");});
-  el("shareLink").addEventListener("click",function(){
+document.addEventListener("DOMContentLoaded", function(){
+  el("maleBtn").addEventListener("click", function(){ selectGender("male"); });
+  el("femaleBtn").addEventListener("click", function(){ selectGender("female"); });
+  el("nameInput").addEventListener("input", function(){ onNameInput(this.value); });
+  el("shareBtn").addEventListener("click", openModal);
+  el("modalClose").addEventListener("click", closeModal);
+  el("shareModal").addEventListener("click", function(e){ if(e.target===this) closeModal(); });
+
+  el("shareWA").addEventListener("click", function(){
     closeModal();
-    if(navigator.clipboard){navigator.clipboard.writeText(SURL).then(function(){toast("Link copied!");}).catch(function(){toast("Copy failed");});}
-    else{toast("Not supported in this browser");}
+    window.open("https://wa.me/?text="+encodeURIComponent(STXT+"\n\n"+SURL),"_blank");
   });
-  el("shareMore").addEventListener("click",function(){
+  el("shareFB").addEventListener("click", function(){
     closeModal();
-    if(navigator.share){navigator.share({title:"Rashi Milan Calculator",text:STXT,url:SURL});}
-    else{el("shareLink").click();}
+    window.open("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(SURL),"_blank");
+  });
+  el("shareLink").addEventListener("click", function(){
+    closeModal();
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(SURL).then(function(){ toast("✓ লিংক কপি হ'ল!"); }).catch(function(){ toast("কপি নহ'ল"); });
+    } else { toast("এই ব্ৰাউজাৰত সম্ভৱ নহয়"); }
+  });
+  el("shareMore").addEventListener("click", function(){
+    closeModal();
+    if(navigator.share){ navigator.share({title:"ৰাশি মিলন কেলকুলেটৰ", text:STXT, url:SURL}); }
+    else { el("shareLink").click(); }
   });
 });
 
